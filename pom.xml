@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>br.com.delta</groupId>
+  <artifactId>generatePDF_maven</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+  <dependency>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging</artifactId>
+        <version>1.1.1</version>
+</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>3.0</version>
+			<scope>system</scope>
+			<systemPath>/${basedir}/lib/commons-collections-3.0.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>6.1.0</version>
+			<scope>system</scope>
+			<systemPath>/${basedir}/lib/jasperreports-6.1.0.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>digester</groupId>
+			<artifactId>digester</artifactId>
+			<version>1.7</version>
+			<scope>system</scope>
+			<systemPath>/${basedir}/lib/commons-digester-1.7.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>itext</groupId>
+			<artifactId>itext</artifactId>
+			<version>1.7</version>
+			<scope>system</scope>
+			<systemPath>/${basedir}/lib/itext-2.1.7.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>utils</groupId>
+			<artifactId>utils</artifactId>
+			<version>1.9.4</version>
+			<scope>system</scope>
+			<systemPath>/${basedir}/lib/commons-beanutils-1.9.4.jar</systemPath>
+		</dependency>
+  
+  		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.23</version>
+			<scope>system</scope>
+			<systemPath>/${basedir}/lib/mysql-connector-java-8.0.23.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>utils</groupId>
+			<artifactId>utils</artifactId>
+			<version>1.9.4</version>
+			<scope>system</scope>
+			<systemPath>/${project.basedir}/lib/commons-beanutils-1.9.4.jar</systemPath>
+		</dependency>
+  </dependencies>
+</project>
