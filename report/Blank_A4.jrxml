@@ -264,7 +264,10 @@ FROM client
 			</textField>
 			<textField>
 				<reportElement x="442" y="233" width="100" height="30" uuid="bc479961-e5e5-44bb-9ebd-4479754a711b"/>
-				<textFieldExpression><![CDATA[new SimpleDateFormat("dd.MM.yyyy").format($F{data_entrada}) 
+				<textFieldExpression><![CDATA[$F{data_entrega} == null ? "" :new SimpleDateFormat("dd.MM.yyyy").format($F{data_entrega}) 
+
+
+
 
 ]]></textFieldExpression>
 			</textField>
@@ -274,7 +277,10 @@ FROM client
 			</staticText>
 			<textField>
 				<reportElement x="120" y="230" width="100" height="30" uuid="16eac615-d597-4792-bd01-aca7bdb53d5c"/>
-				<textFieldExpression><![CDATA[new SimpleDateFormat("dd.MM.yyyy").format($F{data_entrega}) 
+				<textFieldExpression><![CDATA[$F{data_entrada} == null ? "" :new SimpleDateFormat("dd.MM.yyyy").format($F{data_entrada}) 
+
+
+
 
 ]]></textFieldExpression>
 			</textField>
