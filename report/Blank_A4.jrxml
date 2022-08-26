@@ -97,12 +97,12 @@ FROM client
 		<property name="com.jaspersoft.studio.field.label" value="client_id"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="equipment"/>
 	</field>
-	<field name="data_entrega" class="java.sql.Timestamp">
+	<field name="data_entrega" class="java.util.Date">
 		<property name="com.jaspersoft.studio.field.name" value="data_entrega"/>
 		<property name="com.jaspersoft.studio.field.label" value="data_entrega"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="equipment"/>
 	</field>
-	<field name="data_entrada" class="java.sql.Timestamp">
+	<field name="data_entrada" class="java.util.Date">
 		<property name="com.jaspersoft.studio.field.name" value="data_entrada"/>
 		<property name="com.jaspersoft.studio.field.label" value="data_entrada"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="equipment"/>
@@ -264,7 +264,9 @@ FROM client
 			</textField>
 			<textField>
 				<reportElement x="442" y="233" width="100" height="30" uuid="bc479961-e5e5-44bb-9ebd-4479754a711b"/>
-				<textFieldExpression><![CDATA[DATEFORMAT( $F{data_entrega},"dd-MM-yyyy" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd.MM.yyyy").format($F{data_entrada}) 
+
+]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="342" y="233" width="100" height="30" uuid="48e0418f-93bd-4659-83d5-f9109e2a2851"/>
@@ -272,7 +274,9 @@ FROM client
 			</staticText>
 			<textField>
 				<reportElement x="120" y="230" width="100" height="30" uuid="16eac615-d597-4792-bd01-aca7bdb53d5c"/>
-				<textFieldExpression><![CDATA[DATEFORMAT( $F{data_entrega},"dd-MM-yyyy" )]]></textFieldExpression>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd.MM.yyyy").format($F{data_entrega}) 
+
+]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="10" y="230" width="100" height="30" uuid="458e7dc5-33f7-4f0f-9135-0e4753294aaa"/>
