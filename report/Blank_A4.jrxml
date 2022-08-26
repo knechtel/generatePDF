@@ -43,6 +43,8 @@ equipment.serial,
  equipment.cost_value,
  equipment.id,
  equipment.client_id,
+ equipment.data_entrega,
+ equipment.data_entrada,
  client.endereco,
 client.name, 
 client.cpf,
@@ -85,6 +87,26 @@ FROM client
 		<property name="com.jaspersoft.studio.field.label" value="cost_value"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="equipment"/>
 	</field>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="equipment"/>
+	</field>
+	<field name="client_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="client_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="client_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="equipment"/>
+	</field>
+	<field name="data_entrega" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="data_entrega"/>
+		<property name="com.jaspersoft.studio.field.label" value="data_entrega"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="equipment"/>
+	</field>
+	<field name="data_entrada" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="data_entrada"/>
+		<property name="com.jaspersoft.studio.field.label" value="data_entrada"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="equipment"/>
+	</field>
 	<field name="endereco" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="endereco"/>
 		<property name="com.jaspersoft.studio.field.label" value="endereco"/>
@@ -105,17 +127,10 @@ FROM client
 		<property name="com.jaspersoft.studio.field.label" value="email"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="client"/>
 	</field>
-	<field name="id" class="java.lang.Integer">
+	<field name="COLUMN_15" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
 		<property name="com.jaspersoft.studio.field.label" value="id"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="os"/>
-	</field>
-
-
-	<field name="client_id" class="java.lang.Integer">
-		<property name="com.jaspersoft.studio.field.name" value="client_id"/>
-		<property name="com.jaspersoft.studio.field.label" value="client_id"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="os"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="client"/>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
@@ -243,18 +258,26 @@ FROM client
 				<reportElement x="430" y="458" width="100" height="30" uuid="fe2fa6ce-a7c3-46fc-a9c3-e4943e53de17"/>
 				<textFieldExpression><![CDATA[$F{cost_value}]]></textFieldExpression>
 			</textField>
-			<image>
-				<reportElement x="11" y="239" width="529" height="249" uuid="9bad5bc5-3d6d-4984-845c-3a0d55388541"/>
-				<imageExpression><![CDATA["/Users/maiquelknechtel/Desktop/Screen Shot 2022-08-17 at 15.47.57.png"]]></imageExpression>
-			</image>
-			<staticText>
-				<reportElement x="20" y="240" width="120" height="37" uuid="aa6a8033-ad84-4695-b2d5-dd7681b66b2a"/>
-				<text><![CDATA[Material]]></text>
-			</staticText>
 			<textField>
 				<reportElement x="320" y="140" width="100" height="30" uuid="f18bd8d2-ddce-4b2a-8fa0-5ae88ba62db1"/>
 				<textFieldExpression><![CDATA[$F{model}]]></textFieldExpression>
 			</textField>
+			<textField>
+				<reportElement x="442" y="233" width="100" height="30" uuid="bc479961-e5e5-44bb-9ebd-4479754a711b"/>
+				<textFieldExpression><![CDATA[DATEFORMAT( $F{data_entrega},"dd-MM-yyyy" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="342" y="233" width="100" height="30" uuid="48e0418f-93bd-4659-83d5-f9109e2a2851"/>
+				<text><![CDATA[Data de Saída]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="230" width="100" height="30" uuid="16eac615-d597-4792-bd01-aca7bdb53d5c"/>
+				<textFieldExpression><![CDATA[DATEFORMAT( $F{data_entrega},"dd-MM-yyyy" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="230" width="100" height="30" uuid="458e7dc5-33f7-4f0f-9135-0e4753294aaa"/>
+				<text><![CDATA[Data de entrada]]></text>
+			</staticText>
 		</band>
 	</detail>
 	<columnFooter>
