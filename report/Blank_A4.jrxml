@@ -209,13 +209,13 @@ FROM client
 				<reportElement x="10" y="140" width="70" height="30" uuid="22386440-581b-4798-9941-df5ba3fbd642">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f812430d-671b-4102-a1cc-5c191625ddaf"/>
 				</reportElement>
-				<text><![CDATA[Aparelho]]></text>
+				<text><![CDATA[Marca]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="258" y="140" width="39" height="22" uuid="71ebec8b-3d24-430f-aa08-8eb221200858">
+				<reportElement x="240" y="140" width="80" height="22" uuid="71ebec8b-3d24-430f-aa08-8eb221200858">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="01215a36-b8b7-4b5e-b51d-3767b69adf6f"/>
 				</reportElement>
-				<text><![CDATA[Modelo:]]></text>
+				<text><![CDATA[Equipamento:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="380" y="460" width="38" height="30" uuid="195d2104-2c44-41e5-ba10-698cd0010cd8"/>
@@ -243,14 +243,14 @@ FROM client
 			</textField>
 			<staticText>
 				<reportElement x="10" y="170" width="62" height="30" uuid="5cf222d0-f03c-4745-899e-811b7dfb4bb9"/>
-				<text><![CDATA[Defeito]]></text>
+				<text><![CDATA[Defeito:]]></text>
 			</staticText>
 			<line>
 				<reportElement x="0" y="120" width="560" height="1" uuid="e00520b9-cfee-41d6-8d66-b2217279a154"/>
 			</line>
 			<staticText>
-				<reportElement x="258" y="170" width="50" height="30" uuid="51849737-d7eb-48cf-94a5-b2e1a654bc65"/>
-				<text><![CDATA[Obs]]></text>
+				<reportElement x="240" y="170" width="50" height="30" uuid="51849737-d7eb-48cf-94a5-b2e1a654bc65"/>
+				<text><![CDATA[Obs:]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="60" y="84" width="359" height="30" uuid="f81b32a8-5ffb-4186-ab08-b336286d8b7c"/>
@@ -258,7 +258,7 @@ FROM client
 			</textField>
 			<staticText>
 				<reportElement x="8" y="84" width="52" height="30" uuid="4eb53ecb-0dcc-4eae-b8ad-e41f77a251cb"/>
-				<text><![CDATA[Endereço]]></text>
+				<text><![CDATA[Endereço:]]></text>
 			</staticText>
 			<textField pattern="&quot;¤ #,##0.00”">
 				<reportElement x="430" y="458" width="100" height="30" uuid="fe2fa6ce-a7c3-46fc-a9c3-e4943e53de17"/>
@@ -274,7 +274,7 @@ FROM client
 			</textField>
 			<staticText>
 				<reportElement x="320" y="230" width="100" height="30" uuid="48e0418f-93bd-4659-83d5-f9109e2a2851"/>
-				<text><![CDATA[Data de Saída]]></text>
+				<text><![CDATA[Data de Saída:]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="107" y="230" width="100" height="30" uuid="16eac615-d597-4792-bd01-aca7bdb53d5c"/>
@@ -282,7 +282,7 @@ FROM client
 			</textField>
 			<staticText>
 				<reportElement x="10" y="230" width="100" height="30" uuid="458e7dc5-33f7-4f0f-9135-0e4753294aaa"/>
-				<text><![CDATA[Data de entrada]]></text>
+				<text><![CDATA[Data de Entrada:]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="290" y="48" width="160" height="30" uuid="994a292d-6f88-4cdc-812c-1f2ee1b63f2c"/>
@@ -290,7 +290,7 @@ FROM client
 			</textField>
 			<staticText>
 				<reportElement x="240" y="48" width="50" height="30" uuid="09b11716-feb9-4657-8ef0-2b82fd196ebf"/>
-				<text><![CDATA[Telefone]]></text>
+				<text><![CDATA[Telefone:]]></text>
 			</staticText>
 		</band>
 	</detail>
