@@ -49,6 +49,7 @@ equipment.serial,
 client.name, 
 client.cpf,
 client.email,
+client.telefone,
 client.id
 FROM client
 
@@ -97,12 +98,12 @@ FROM client
 		<property name="com.jaspersoft.studio.field.label" value="client_id"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="equipment"/>
 	</field>
-	<field name="data_entrega" class="java.util.Date">
+	<field name="data_entrega" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.name" value="data_entrega"/>
 		<property name="com.jaspersoft.studio.field.label" value="data_entrega"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="equipment"/>
 	</field>
-	<field name="data_entrada" class="java.util.Date">
+	<field name="data_entrada" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.name" value="data_entrada"/>
 		<property name="com.jaspersoft.studio.field.label" value="data_entrada"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="equipment"/>
@@ -127,7 +128,12 @@ FROM client
 		<property name="com.jaspersoft.studio.field.label" value="email"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="client"/>
 	</field>
-	<field name="COLUMN_15" class="java.lang.Integer">
+	<field name="telefone" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="telefone"/>
+		<property name="com.jaspersoft.studio.field.label" value="telefone"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="client"/>
+	</field>
+	<field name="COLUMN_16" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
 		<property name="com.jaspersoft.studio.field.label" value="id"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="client"/>
@@ -216,11 +222,11 @@ FROM client
 				<text><![CDATA[Preço]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="303" y="18" width="116" height="30" uuid="d78e38d6-dbac-4302-abe1-2472863b8c2f"/>
+				<reportElement x="270" y="18" width="116" height="30" uuid="d78e38d6-dbac-4302-abe1-2472863b8c2f"/>
 				<textFieldExpression><![CDATA[$F{cpf}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="240" y="18" width="50" height="30" uuid="2f530610-27b0-4ca1-aa8a-a2f3e34279f5"/>
+				<reportElement x="240" y="18" width="30" height="30" uuid="2f530610-27b0-4ca1-aa8a-a2f3e34279f5"/>
 				<text><![CDATA[CPF:]]></text>
 			</staticText>
 			<staticText>
@@ -228,7 +234,7 @@ FROM client
 				<text><![CDATA[Email:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="60" y="50" width="184" height="30" uuid="a80c0f85-5625-48f1-8d32-f2d70c2a7948"/>
+				<reportElement x="49" y="48" width="184" height="30" uuid="a80c0f85-5625-48f1-8d32-f2d70c2a7948"/>
 				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -244,7 +250,7 @@ FROM client
 			</line>
 			<staticText>
 				<reportElement x="258" y="170" width="50" height="30" uuid="51849737-d7eb-48cf-94a5-b2e1a654bc65"/>
-				<text><![CDATA[obs]]></text>
+				<text><![CDATA[Obs]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="60" y="84" width="359" height="30" uuid="f81b32a8-5ffb-4186-ab08-b336286d8b7c"/>
@@ -263,30 +269,28 @@ FROM client
 				<textFieldExpression><![CDATA[$F{model}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="442" y="233" width="100" height="30" uuid="bc479961-e5e5-44bb-9ebd-4479754a711b"/>
-				<textFieldExpression><![CDATA[$F{data_entrega} == null ? "" :new SimpleDateFormat("dd.MM.yyyy").format($F{data_entrega}) 
-
-
-
-
-]]></textFieldExpression>
+				<reportElement x="420" y="230" width="100" height="30" uuid="bc479961-e5e5-44bb-9ebd-4479754a711b"/>
+				<textFieldExpression><![CDATA[$F{data_entrega} == null ? "" :new SimpleDateFormat("dd.MM.yyyy").format($F{data_entrega})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="342" y="233" width="100" height="30" uuid="48e0418f-93bd-4659-83d5-f9109e2a2851"/>
+				<reportElement x="320" y="230" width="100" height="30" uuid="48e0418f-93bd-4659-83d5-f9109e2a2851"/>
 				<text><![CDATA[Data de Saída]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="120" y="230" width="100" height="30" uuid="16eac615-d597-4792-bd01-aca7bdb53d5c"/>
-				<textFieldExpression><![CDATA[$F{data_entrada} == null ? "" :new SimpleDateFormat("dd.MM.yyyy").format($F{data_entrada}) 
-
-
-
-
-]]></textFieldExpression>
+				<reportElement x="107" y="230" width="100" height="30" uuid="16eac615-d597-4792-bd01-aca7bdb53d5c"/>
+				<textFieldExpression><![CDATA[$F{data_entrada} == null ? "" :new SimpleDateFormat("dd.MM.yyyy").format($F{data_entrada})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="10" y="230" width="100" height="30" uuid="458e7dc5-33f7-4f0f-9135-0e4753294aaa"/>
 				<text><![CDATA[Data de entrada]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="290" y="48" width="160" height="30" uuid="994a292d-6f88-4cdc-812c-1f2ee1b63f2c"/>
+				<textFieldExpression><![CDATA[$F{telefone}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="240" y="48" width="50" height="30" uuid="09b11716-feb9-4657-8ef0-2b82fd196ebf"/>
+				<text><![CDATA[Telefone]]></text>
 			</staticText>
 		</band>
 	</detail>
