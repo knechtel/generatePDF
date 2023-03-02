@@ -45,6 +45,8 @@ equipment.serial,
  equipment.client_id,
  equipment.data_entrega,
  equipment.data_entrada,
+ equipment.obs,
+ equipment.laudo,
  client.endereco,
 client.name, 
 client.cpf,
@@ -108,6 +110,16 @@ FROM client
 		<property name="com.jaspersoft.studio.field.label" value="data_entrada"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="equipment"/>
 	</field>
+	<field name="obs" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="obs"/>
+		<property name="com.jaspersoft.studio.field.label" value="obs"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="equipment"/>
+	</field>
+	<field name="laudo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="laudo"/>
+		<property name="com.jaspersoft.studio.field.label" value="laudo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="equipment"/>
+	</field>
 	<field name="endereco" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="endereco"/>
 		<property name="com.jaspersoft.studio.field.label" value="endereco"/>
@@ -133,7 +145,7 @@ FROM client
 		<property name="com.jaspersoft.studio.field.label" value="telefone"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="client"/>
 	</field>
-	<field name="COLUMN_16" class="java.lang.Integer">
+	<field name="COLUMN_18" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
 		<property name="com.jaspersoft.studio.field.label" value="id"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="client"/>
@@ -158,7 +170,7 @@ FROM client
 				<reportElement x="0" y="10" width="560" height="1" uuid="dbb6981c-e2e2-45a0-9aae-8b7a07442c53"/>
 			</line>
 			<staticText>
-				<reportElement x="450" y="43" width="69" height="30" uuid="6c7edaa0-8054-48a5-ad77-a177038330ad"/>
+				<reportElement x="490" y="43" width="29" height="30" uuid="6c7edaa0-8054-48a5-ad77-a177038330ad"/>
 				<text><![CDATA[OS]]></text>
 			</staticText>
 			<image>
@@ -209,7 +221,7 @@ FROM client
 				<reportElement x="10" y="140" width="70" height="30" uuid="22386440-581b-4798-9941-df5ba3fbd642">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f812430d-671b-4102-a1cc-5c191625ddaf"/>
 				</reportElement>
-				<text><![CDATA[Marca]]></text>
+				<text><![CDATA[Marca:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="240" y="140" width="80" height="22" uuid="71ebec8b-3d24-430f-aa08-8eb221200858">
@@ -249,7 +261,7 @@ FROM client
 				<reportElement x="0" y="120" width="560" height="1" uuid="e00520b9-cfee-41d6-8d66-b2217279a154"/>
 			</line>
 			<staticText>
-				<reportElement x="240" y="170" width="50" height="30" uuid="51849737-d7eb-48cf-94a5-b2e1a654bc65"/>
+				<reportElement x="240" y="170" width="30" height="30" uuid="51849737-d7eb-48cf-94a5-b2e1a654bc65"/>
 				<text><![CDATA[Obs:]]></text>
 			</staticText>
 			<textField>
@@ -291,6 +303,18 @@ FROM client
 			<staticText>
 				<reportElement x="240" y="48" width="50" height="30" uuid="09b11716-feb9-4657-8ef0-2b82fd196ebf"/>
 				<text><![CDATA[Telefone:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="270" y="170" width="290" height="50" uuid="b61511b2-3a72-4fc2-8f1e-9f1bd7693073"/>
+				<textFieldExpression><![CDATA[$F{obs}==null?"":$F{obs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="88" y="310" width="452" height="120" uuid="d1ceb820-cbfd-4799-afa4-ba95c2f90398"/>
+				<textFieldExpression><![CDATA[$F{laudo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="310" width="70" height="30" uuid="dd2c4b40-d3b6-4bb9-9fd3-07be39c1453a"/>
+				<text><![CDATA[Laudo:]]></text>
 			</staticText>
 		</band>
 	</detail>
