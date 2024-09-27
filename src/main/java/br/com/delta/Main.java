@@ -12,19 +12,19 @@ public class Main {
 		System.out.print("mais um teste ");
 		try {
 			Connection conn;
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/loja", "root", "123");
+			conn = DriverManager.getConnection("jdbc:mariadb://127.0.0.1:3306/loja", "root", "mypass");
 
 			HashMap parametros = new HashMap();
 
 			if (args.length == 0) {
-				parametros.put("ID", new Integer(103));
+				parametros.put("ID", new Integer(131));
 			} else {
 				parametros.put("ID", new Integer(args[0]));
 			}
-			parametros.put("image", System.getProperty("user.dir") + "/image/Delta-Arrow-logo.png");
+
 
 			JasperReport jasperReport = JasperCompileManager
-					.compileReport(System.getProperty("user.dir") + "/report/Blank_A4.jrxml");
+					.compileReport(System.getProperty("user.dir") + "/report/saoJoseCherry_1.jrxml");
 
 			JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametros, conn);
 			System.out.println("Done! filling Jasper Report ");

@@ -55,7 +55,19 @@
 			<scope>system</scope>
 			<systemPath>/${basedir}/lib/mysql-connector-java-8.0.23.jar</systemPath>
 		</dependency>
-		
+	<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>3.4.0</version>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.23</version>
+		</dependency>
 		<dependency>
 			<groupId>utils</groupId>
 			<artifactId>utils</artifactId>
