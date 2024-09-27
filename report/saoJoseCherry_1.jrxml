@@ -141,11 +141,8 @@ WHERE
 				</textField>
 			</frame>
 			<textField>
-				<reportElement x="500" y="40" width="55" height="30" forecolor="#E01512" uuid="3b49069d-104b-40f3-ad5e-51a76e48e5df"/>
-				<textElement>
-					<font size="24"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+				<reportElement x="500" y="40" width="53" height="30" uuid="059c62c4-e188-4d37-8dba-32a782d937a7"/>
+				<textFieldExpression><![CDATA[$P{ID}]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>
