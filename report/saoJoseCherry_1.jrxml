@@ -138,10 +138,14 @@ WHERE
 						<font size="12"/>
 					</textElement>
 					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+					<patternExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new java.util.Date())]]></patternExpression>
 				</textField>
 			</frame>
 			<textField>
 				<reportElement x="500" y="40" width="53" height="30" uuid="059c62c4-e188-4d37-8dba-32a782d937a7"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{ID}]]></textFieldExpression>
 			</textField>
 		</band>
@@ -172,7 +176,7 @@ WHERE
 				<text><![CDATA[Nome:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="320" y="20" width="40" height="30" uuid="6eb39de3-6551-42ba-af62-a43551747c00"/>
+				<reportElement x="300" y="20" width="40" height="30" uuid="6eb39de3-6551-42ba-af62-a43551747c00"/>
 				<text><![CDATA[CPF:]]></text>
 			</staticText>
 			<staticText>
@@ -184,17 +188,14 @@ WHERE
 				<text><![CDATA[Telefone:]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="11" y="10" width="545" height="2" uuid="d6961a3b-279a-4b20-9715-0f412413d2cd"/>
-			</rectangle>
-			<rectangle>
-				<reportElement x="10" y="100" width="545" height="1" uuid="4eeb9b76-6660-4b98-9f9b-db476f32b4d1"/>
+				<reportElement x="0" y="100" width="555" height="1" uuid="4eeb9b76-6660-4b98-9f9b-db476f32b4d1"/>
 			</rectangle>
 			<textField>
 				<reportElement x="80" y="112" width="100" height="30" uuid="036a12d8-dadc-446f-be27-1a9e4e592bdb"/>
 				<textFieldExpression><![CDATA[$F{model}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="255" y="112" width="100" height="30" uuid="6c925e67-d1a9-437d-b11a-67684d8c15b5"/>
+				<reportElement x="251" y="110" width="100" height="30" uuid="6c925e67-d1a9-437d-b11a-67684d8c15b5"/>
 				<textFieldExpression><![CDATA[$F{serial}]]></textFieldExpression>
 			</textField>
 			<staticText>
@@ -205,6 +206,9 @@ WHERE
 				<reportElement x="210" y="110" width="40" height="30" uuid="1bbefd8a-46a3-4f44-8f48-a97c21cf6e48"/>
 				<text><![CDATA[Serial]]></text>
 			</staticText>
+			<rectangle>
+				<reportElement x="0" y="10" width="555" height="1" uuid="ddff382a-1e62-4f62-8699-98b593fd0cad"/>
+			</rectangle>
 		</band>
 	</columnHeader>
 	<detail>
@@ -223,23 +227,25 @@ WHERE
 				</staticText>
 			</frame>
 			<textField>
-				<reportElement x="120" y="40" width="100" height="30" uuid="00e10afe-580b-49be-af68-94ab90a50b87">
+				<reportElement x="100" y="40" width="150" height="30" uuid="00e10afe-580b-49be-af68-94ab90a50b87">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="56331c96-85b1-411b-8876-fb0ed84d92f9"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{entry_date}]]></textFieldExpression>
+				<patternExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format($F{entry_date})]]></patternExpression>
 			</textField>
 			<staticText>
-				<reportElement x="10" y="40" width="100" height="30" uuid="646ddd54-7a22-43dc-a19e-629c28a237e2"/>
+				<reportElement x="10" y="40" width="90" height="30" uuid="646ddd54-7a22-43dc-a19e-629c28a237e2"/>
 				<text><![CDATA[Data de entrada:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="120" y="90" width="100" height="30" uuid="679e9c1a-dc1a-4077-b623-7759ea7ea6ad">
+				<reportElement x="100" y="90" width="120" height="30" uuid="679e9c1a-dc1a-4077-b623-7759ea7ea6ad">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a1713556-5f75-4cb7-80e5-fd0db2e6358f"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{departure_date}]]></textFieldExpression>
+				<patternExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format($F{departure_date})]]></patternExpression>
 			</textField>
 			<staticText>
-				<reportElement x="10" y="90" width="100" height="30" uuid="a172b841-6789-4142-a373-943401734ccb"/>
+				<reportElement x="10" y="90" width="90" height="30" uuid="a172b841-6789-4142-a373-943401734ccb"/>
 				<text><![CDATA[Data de Entrega:]]></text>
 			</staticText>
 			<textField>
