@@ -9,7 +9,6 @@ public class Main {
 
 	public static void main(String args[]) {
 
-		System.out.print("mais um teste ");
 		try {
 			Connection conn;
 			conn = DriverManager.getConnection("jdbc:mariadb://127.0.0.1:3306/loja", "root", "mypass");
@@ -21,7 +20,6 @@ public class Main {
 			} else {
 				parametros.put("ID", new Integer(args[0]));
 			}
-
 
 			JasperReport jasperReport = JasperCompileManager
 					.compileReport(System.getProperty("user.dir") + "/report/saoJoseCherry_1.jrxml");
